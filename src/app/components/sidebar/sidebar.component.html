@@ -1,0 +1,47 @@
+<nav id="sidebar" [class.active]="classApplied">
+  <div class="sidebar-header">
+
+    <img src="./../../../assets/images/logo-sidebar/logo-b.png" class="logo-sidebar" alt="Logo Navegação">
+
+    <!-- <button type="button" [class.active]="classApplied" id="sidebarCollapse" class="navbar-btn" (click)="toggleClass()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button> -->
+    <fa-icon [icon]="faBars" [class.active]="classApplied" id="sidebarCollapse" (click)="toggleClass()"></fa-icon>
+  </div>
+
+  <ul class="list-unstyled components">
+    <p class="">Administração Pública e o SUS</p>
+    <li class="pie-chart-icon active">
+      <a
+        href="#sidebarSubmenu"
+        data-toggle="collapse"
+        aria-expanded="false"
+        class="dropdown-toggle"
+        >Lorem ipsum dolor sit</a
+      >
+      <ul class="collapse list-unstyled" id="sidebarSubmenu">
+        <li>
+          <a href="#">Item 1</a>
+        </li>
+        <li>
+          <a href="#">Item 2</a>
+        </li>
+        <li>
+          <a href="#">Item 3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="message-square-icon">
+      <a href="#">Lorem ipsum dolor sit</a>
+    </li>
+    <li class="package-icon">
+      <a href="#">Lorem ipsum dolor sit</a>
+    </li>
+  </ul>
+  <!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
+
+
+
+</nav>

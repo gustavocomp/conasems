@@ -1,0 +1,326 @@
+
+
+@import '~ng-wizard/themes/ng_wizard.min.css';
+
+@import "./typography.scss";
+@import './variables.scss';
+@import './mixins.scss';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  perspective: 1500px;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+p {
+  line-height: 1.25rem;
+}
+
+b,
+strong {
+  font-family: $custom-font-bold;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: ($font-base-size * 1.75);
+  line-height: (($font-base-size * 1.8) * 1.5);
+}
+
+h2 {
+  font-size: ($font-base-size * 1.666);
+  line-height: (($font-base-size * 1.633) * 1.5);
+}
+
+h3 {
+  font-size: ($font-base-size * 1.5);
+  line-height: (($font-base-size * 1.5) * 1.5);
+}
+
+h4 {
+  font-size: ($font-base-size * 1.333);
+  line-height: (($font-base-size * 1.25) * 1.5);
+  span {
+    font-size: ($font-base-size);
+  }
+}
+
+h5 {
+  font-size: ($font-base-size * 1.25);
+  line-height: ($font-base-size * 1.5);
+}
+
+h6 {
+  font-size: $font-base-size;
+  line-height: (($font-base-size * 0.875) * 1.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $bs2-azul-primario;
+  margin: 24px 0 12px 0;
+  font-family: $custom-font-bold;
+}
+
+
+/********************************* ÂNCORAS - ANCHORS *********************************/
+
+a {
+  @include transition-system(0.2s);
+  text-decoration: none;
+  color: $bs2-azul-primario;
+  &:hover {
+    color: $bs2-violeta;
+    text-decoration: none;
+  }
+  &.column-anchor {
+    line-height: 36px;
+    text-decoration: none;
+  }
+}
+
+table a.btn {
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+label {
+  font-size: 0.875rem;
+  font-family: "montserrat-medium", sans-serif; }
+
+/* line 257, /Users/mallet/Documents/!projetos/bs2/front-end/sass/bs2.scss */
+.form-control {
+  height: 36px;
+  color: #9C9C9C;
+  border-color: #e2e3e9; }
+  /* line 261, /Users/mallet/Documents/!projetos/bs2/front-end/sass/bs2.scss */
+  .form-control:focus {
+    border-color: #3333cc;
+    color: #3333cc;
+    -webkit-box-shadow: 0 0 4px #9C9C9C;
+    -moz-box-shadow: 0 0 4px #9C9C9C;
+    box-shadow: 0 0 4px #9C9C9C; }
+/* SWITCH */
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  // width: 60px;
+  // height: 34px;
+  width: 43px;
+  height: 23px;
+  margin: 3px -3px 0px 0px;
+  input {
+    display: none;
+    &:checked {
+      + .switch-slider {
+        background-color: $bs2-azul-primario;
+        &:before {
+          -webkit-transform: translateX(18px);
+          -ms-transform: translateX(18px);
+          transform: translateX(18px);
+        }
+        &:hover {
+          background-color: $bs2-ciano;
+        }
+      }
+    }
+    &:focus + .switch-slider {
+      box-shadow: 0 0 1px $cinza;
+    }
+  }
+  &-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $cinza;
+    @include border-radius(34px);
+    @include transition-system(0.2s);
+    &:before {
+      @include border-radius(50%);
+      position: absolute;
+      content: "";
+      height: 17px;
+      width: 17px;
+      left: 4px;
+      bottom: 3px;
+      background-color: $branco;
+      @include transition-system(0.2s);
+    }
+  }
+}
+
+/********************************* ESTRUTURA - STRUCTURE *********************************/
+html {
+  height: 100%;
+  font-size: $font-base-size;
+
+  body {
+    min-height: 100vh;
+    position: relative;
+    color: $cinza-escuro;
+    font-family: $custom-font-regular;
+    font-size: $font-base-size;
+    background-color: $branco;
+    -webkit-font-smoothing: subpixel-antialiased;
+    overflow: hidden;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* NAVBAR */
+.navbar-default {
+  background-color: $branco;
+  border: none;
+  margin-top: 16px;
+  position: relative;
+
+  .navbar-header {
+    button.navbar-toggle {
+      padding: 0px 12px 10px 12px;
+      border: none;
+      margin-right: 0;
+      margin-bottom: 0;
+      background-color: $bs2-azul-primario;
+      @include transition-system(0.2s);
+      &:focus,
+      &:hover {
+        @include box-shadow(0, 2px, 6px, $cinza-escuro);
+      }
+      span {
+        font-size: 0.75rem;
+        color: $branco;
+      }
+      .icon-bar {
+        background-color: $branco;
+        margin-left: 7px;
+      }
+    }
+  }
+
+  .navbar-brand {
+    height: 56px;
+    padding: 0 32px 0 0;
+
+    img {
+      float: left;
+      width: 100px;
+      height: 54px;
+    }
+    span {
+      float: left;
+      margin-top: 32px;
+      margin-left: 10px;
+      font-size: 0.65rem;
+      line-height: 0.766rem;
+      color: $bs2-azul-primario;
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+    .navbar-default .navbar-nav > li > a {
+      font-size: 80px!important;
+    }
+  }
+
+  /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+  @media screen and (max-width: 600px) {
+    .navbar-default .navbar-nav > li > a {
+      font-size: 30px!important;
+    }
+  }
+
+  .navbar-nav {
+    margin: 36px 0 0 0;
+    > li {
+      > a {
+        font-family: $custom-font-bold;
+        font-size: 1rem;
+        padding: 0 10px;
+        color: $cinza;
+        text-decoration: none;
+        &:focus,
+        &:hover {
+          color: $bs2-ciano;
+        }
+        &.link-sair {
+          padding-right: 0;
+        }
+      }
+    }
+    > .active {
+      > a,
+      > a:focus,
+      > a:hover {
+        background-color: transparent;
+        color: $bs2-azul-primario;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    border: none;
+  }
+}
+
+.container-fluid.header-ruler {
+  padding: 0;
+  hr {
+    -webkit-box-shadow: 0px 1px 0px 1px rgba(244, 239, 239, 0);
+    -moz-box-shadow: 0px 1px 0px 1px rgba(244, 239, 239, 0);
+    box-shadow: 0px 1px 0px 1px rgba(244, 239, 239, 0);
+    border-top: 2px outset #ececec;
+    margin: 0;
+  }
+}
+
+.ps__rail-y {
+  z-index: 900!important;
+}
+
+.main-section {
+  background-color: #F5F6F7;
+  padding: 20px 0 40px 0;
+   &.scroll-t{ //específico para tela de BPO PJ
+        padding-top: 0 !important;
+        .scroll-transform{
+            top: 0 !important;
+            .list-buttons{
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
+
+
+/********************************* PAINÉIS - PANELS *********************************/
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
